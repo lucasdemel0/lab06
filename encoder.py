@@ -8,6 +8,14 @@ def encode(password):
     return encoded
 
 
+def decode(password):
+    decoded = ""
+    for i in password:
+        digit = int(i) - 3
+        decoded += str(digit)
+    return decoded
+
+
 def main():
 
     encoded = None
@@ -25,9 +33,13 @@ def main():
             password = input("Please enter your password to encode: ")
             encoded = encode(password)
 
+        elif menu_selection == 2:
+            decoded = decode(encoded)
+            print("The encoded password is " + encoded + " and the original password is " + decoded + ".")
 
         elif menu_selection == 3:
             break
+
 
 if __name__ == "__main__":
     main()
